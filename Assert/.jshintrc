@@ -120,6 +120,9 @@
 		//"anotherCoolGlobal",
 		//"iLoveDouglas"
 		"Java", "JavaFX", "$ARG" //no effect
-	]
+	],
+	{
+	 "esversion": 6
+	}
 	//,	"indent" : 2 // Specify indentation spacing
 }

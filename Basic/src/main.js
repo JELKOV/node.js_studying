@@ -12,6 +12,5 @@ console.log("a1: %d, a2: %s", a1, a2);
 console.log("a1:", a1, "a2:", a2);
 
 // 모듈 사용하기
-var test = require("./second.js"); // 모듈 가져오기
-
-test.f2();                         // 모듈 내 함수 호출
+import { f2 } from "./second.js"; // 모듈 가져오기
+f2();                             // 모듈 내 함수 호출

@@ -1,4 +1,4 @@
 // second.js
-exports.f2 = function() {
-  console.log("f2 calling function");
+export function f2() {
+  console.log("f2 함수 호출");
 }
