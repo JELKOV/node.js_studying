@@ -1,0 +1,9 @@
+console.log("AHN")
+
+var a1 = 100;
+console.log("a1: %d", a1);
+
+console.log("a1:", a1);
+
+var a2= 200;
+console.log("a1 :", a1, "a2:", a2);

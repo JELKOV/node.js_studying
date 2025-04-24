@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\gram\nodejs_studying\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2659807801.index
+1561642085.index
+2123937667.index
+4188820554.index
+2489137634.index
+2106931281.index
+2380175872.index

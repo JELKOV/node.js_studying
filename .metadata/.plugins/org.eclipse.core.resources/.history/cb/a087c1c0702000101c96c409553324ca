@@ -1,0 +1,9 @@
+console.log("AHN")
+
+var a1 = 100;
+console.log("a1: %d, a2: %s", a1, a2);
+
+console.log("a1:", a1);
+
+var a2= "문자열2";
+console.log("a1 :", a1, "a2:", a2);
