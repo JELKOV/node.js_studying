@@ -1,9 +1,18 @@
-# Eclipse 관련
+# Eclipse
+.settings/
+.project
+.classpath
 .metadata/
 RemoteSystemsTempFiles/
-*.class
-.project
 
-# macOS 또는 Windows 임시파일
+# IDE-specific
+.sublime-project
+.tern-project
+
+# Node.js 관련
+node_modules/
+.env
+
+# macOS & Windows
 .DS_Store
 Thumbs.db
