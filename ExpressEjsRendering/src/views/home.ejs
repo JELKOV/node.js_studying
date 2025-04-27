@@ -1,0 +1,26 @@
+<!-- views/home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+</head>
+<body>
+  <h1>Welcome, <%= username %>!</h1>
+
+  <% if (isLoggedIn) { %>
+    <p>로그인 되었습니다.</p>
+  <% } else { %>
+    <p>로그인하지 않았습니다.</p>
+  <% } %>
+
+  <ul>
+    <% fruits.forEach(fruit => { %>
+      <li><%= fruit %></li>
+    <% }) %>
+  </ul>
+
+  <p>오늘 날짜: <%= currentDate %></p>
+  <p><a href="test">test</a></p>
+</body>
+</html>
