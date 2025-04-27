@@ -1,0 +1,54 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index 페이지</title> <!-- 문서 제목 -->
+</head>
+<body>
+  <h1>index.ejs</h1> <!-- 메인 제목 -->
+
+  <!-- GET 방식으로 데이터 전달 -->
+  <h2>GET 요청 테스트</h2>
+  <!-- 링크로 GET 요청 보내기 -->
+  <a href="/parameter?data1=aaa&data2=bbb">GET 방식 링크 이동</a>
+
+  <!-- 폼을 통한 GET 요청 보내기 -->
+  <form action="/parameter" method="get">
+    data1 : <input type="text" name="data1" />
+    data2 : <input type="text" name="data2" />
+    <button type="submit">Submit GET</button>
+  </form>
+
+  <hr/>
+
+  <!-- POST 방식으로 데이터 전달 -->
+  <h2>POST 요청 테스트</h2>
+  <!-- 폼을 통한 POST 요청 보내기 -->
+  <form action="/parameter" method="post">
+    data1 : <input type="text" name="data1" />
+    data2 : <input type="text" name="data2" />
+    <button type="submit">Submit POST</button>
+  </form>
+
+  <hr/>
+
+  <!-- 쿠키 저장 및 불러오기 테스트 -->
+  <h2>현재 모드: <%= darkMode === 'on' ? 'Dark Mode' : 'Light Mode' %></h2> 
+  <!-- darkMode 값에 따라 다크모드/라이트모드 출력 -->
+
+  <!-- 다크모드 설정 링크 -->
+  <a href="/darkmode/on">Dark Mode</a> |
+  <a href="/darkmode/off">Light Mode</a>
+  
+  <hr/>
+
+  <!-- 세션 저장, 조회, 삭제 기능 테스트 링크 -->
+  <h2>세션 테스트</h2>
+  <ul>
+    <li><a href="/save-session">세션 저장</a></li>
+    <li><a href="/load-session">세션 불러오기</a></li>
+    <li><a href="/destroy-session">세션 삭제</a></li>
+  </ul>
+</body>
+</html>

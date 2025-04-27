@@ -1,0 +1,14 @@
+{
+  "name": "Data-ParameterSessionCookie",
+  "version": "1.0.0",
+  "description": "직접 만든 package.json 파일",
+  "private": "true",
+  "type": "module",
+  "dependencies": {
+	  "express" : "*",
+	  "ejs" : "*",
+	  "body-parser": "*",
+	  "cookie-parser": "*",
+	  "express-session": "*"
+  }
+}
