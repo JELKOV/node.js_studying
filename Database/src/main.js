@@ -16,8 +16,24 @@ conn.connect((err) => {
     console.error('MySQL connect failed', err);
     return;
   }
-  
+
   console.log('MySQL connect success!');
+
+  // 테스트를 위해 기존 데이터 전체 삭제
+  clearTable();
+
+  // 테이블 데이터 전체 삭제 함수
+  function clearTable() {
+    const sqlDeleteAll = "delete from TestTable";
+    conn.query(sqlDeleteAll, (error) => {
+      if (error) {
+        console.error('전체 데이터 삭제 실패', error);
+      } else {
+        console.log('전체 데이터 삭제 완료!');
+        insertData(0);  // 삭제가 끝난 뒤 Insert 시작
+      }
+    });
+  }
 
   // Insert할 데이터
   const sqlInsert = "insert into TestTable (int_data, str_data) values (?, ?)";
@@ -26,9 +42,6 @@ conn.connect((err) => {
     [200, "문자열2"],
     [300, "문자열3"]
   ];
-
-  // Insert 시작
-  insertData(0);
 
   // 데이터 삽입 함수
   function insertData(index) {
@@ -40,7 +53,7 @@ conn.connect((err) => {
 
     conn.query(sqlInsert, input_data[index], (error) => {
       if (error) {
-        console.error(error);
+        console.error('Insert failed', error);
       } else {
         console.log(`Save finished ${index + 1}`);
         insertData(index + 1); // 다음 데이터 삽입
@@ -69,7 +82,7 @@ conn.connect((err) => {
   function updateData() {
     const sqlUpdate = "update TestTable set str_data = ? where int_data = ?";
     const update_data = ["문자열100", 100];
-    
+
     conn.query(sqlUpdate, update_data, (error) => {
       if (error) {
         console.error('Update failed', error);
@@ -84,7 +97,7 @@ conn.connect((err) => {
   // 데이터 삭제 함수
   function deleteData() {
     const sqlDelete = "delete from TestTable where int_data = ?";
-    const delete_data = [200];
+    const delete_data = [100];
 
     conn.query(sqlDelete, delete_data, (error) => {
       if (error) {
@@ -109,7 +122,7 @@ conn.connect((err) => {
           console.log("int_data:", obj.int_data, "| str_data:", obj.str_data);
         }
       }
-      // 연결 종료
+      // 모든 작업 끝났으면 연결 종료
       conn.end((err) => {
         if (err) console.error('MySQL disconnect failed', err);
         else console.log('MySQL disconnect success!');
@@ -117,3 +130,4 @@ conn.connect((err) => {
     });
   }
 });
+
